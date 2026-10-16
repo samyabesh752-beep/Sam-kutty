@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>G. Sam Yabesh · Portfolio</title>
+<meta name="description" content="Portfolio of G. Sam Yabesh, first-year B.Tech IT student.">
+<script>try{var t=localStorage.getItem('gsy-theme');if(!t)t=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme='light'}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+:root{--disp:'Archivo Black',Impact,sans-serif;--mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+--bg:#d8d0ba;--panel:#e8e2d0;--ink:#25211a;--mute:#585040;--line:#25211a;--amber:#f0a20c;--red:#bf3a21;--pop:#f0a20c;--sh:#25211a;--onamb:#1d1708;--onred:#fff;--hz:#25211a;
+--grain:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .15 0 0 0 0 .13 0 0 0 0 .1 .35 0 0 0 -.08'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+[data-theme=dark]{--bg:#0f0d08;--panel:#1a160d;--ink:#ffbd3a;--mute:#b58a2e;--line:#a8750c;--amber:#ffb627;--red:#ff6a4d;--pop:#c23b22;--sh:#5c3f07;--onred:#0f0d08;--hz:#0f0d08;--grain:none}
+html{background:var(--bg);scroll-behavior:smooth}
+html.swap{background:#080604}
+body{margin:0;color:var(--ink);font:400 1rem/1.7 var(--mono);padding-bottom:64px;overflow-x:hidden;-webkit-text-size-adjust:100%}
+#screen{background-color:var(--bg);background-image:var(--grain)}
+a{color:inherit}
+h1,h2,h3{margin:0;font-weight:400}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.wrap{width:min(100% - 40px,1080px);margin-inline:auto}
+[data-theme=dark] body::after{content:"";position:fixed;inset:0;z-index:90;pointer-events:none;background:repeating-linear-gradient(rgba(0,0,0,.2) 0 1px,transparent 1px 3px),radial-gradient(ellipse at center,transparent 62%,rgba(0,0,0,.4))}
+
+/* boot */
+#boot{position:fixed;inset:0;z-index:200;background:#080604;animation:gone .01s 2.4s forwards}
+@keyframes gone{to{opacity:0;visibility:hidden}}
+.crt{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 7vw;color:#ffb627;background:#0f0d08;animation:on .45s cubic-bezier(.2,.8,.2,1) both,off .4s cubic-bezier(.6,0,.9,.4) 1.95s forwards}
+@keyframes on{0%{transform:scale(0,.006);background:#fff3d6}45%{transform:scale(1,.006);background:#fff3d6}100%{transform:none;background:#0f0d08}}
+@keyframes off{0%{transform:none;background:#0f0d08}55%{transform:scale(1,.006);background:#fff3d6}100%{transform:scale(0,.006);background:#fff3d6}}
+.bt{margin:0 0 1rem;font-size:.8rem;color:#b58a2e}
+.bw span{display:block;font:400 clamp(2.6rem,15vw,7rem)/1.05 var(--disp);opacity:0;clip-path:inset(0 100% 0 0);animation:ty .32s steps(7) forwards;animation-delay:calc(.55s + var(--i)*.38s)}
+.bw span:nth-child(3){color:#f4ead0}
+@keyframes ty{to{opacity:1;clip-path:inset(0)}}
+#skip{position:absolute;right:16px;bottom:16px;z-index:2;font:500 .85rem var(--mono);color:#ffb627;background:none;border:2px solid #a8750c;padding:8px 14px;cursor:pointer}
+#skip:hover{background:#ffb627;color:#0f0d08}
+
+/* header + F-key bar */
+.top{position:fixed;inset:0 0 auto;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:8px 16px;background:var(--bg);border-bottom:2px solid var(--line)}
+.brand{font-weight:700;text-decoration:none;font-size:.9rem}
+.cur{display:inline-block;width:.6em;height:1.05em;margin-left:2px;vertical-align:-.15em;background:currentColor;animation:bl 1.05s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.rocker{display:flex;align-items:center;gap:8px;background:none;border:0;color:var(--ink);font:500 .66rem/1 var(--mono);cursor:pointer;padding:6px 0}
+.rocker span{opacity:.5;transition:opacity .2s}
+[data-theme=light] .rocker .l,[data-theme=dark] .rocker .d{opacity:1;font-weight:700}
+.rk{position:relative;width:54px;height:28px;border:2px solid var(--line);border-radius:5px;background:var(--panel);display:block}
+.rk i{position:absolute;top:3px;left:3px;width:24px;height:18px;border:2px solid var(--line);border-radius:3px;background:repeating-linear-gradient(90deg,transparent 0 3px,rgba(0,0,0,.3) 3px 4px),var(--amber);transition:transform .28s cubic-bezier(.3,1.5,.5,1)}
+[data-theme=dark] .rk i{transform:translateX(20px)}
+.fk{position:fixed;inset:auto 0 0;z-index:60;display:flex;background:var(--ink);color:var(--bg);border-top:2px solid var(--line)}
+.fk a{flex:1;text-align:center;padding:6px 2px 7px;font:500 .74rem/1.25 var(--mono);text-decoration:none;border-left:1px solid var(--bg)}
+.fk a:first-child{border-left:0}
+.fk b{display:block;font-size:.62rem;opacity:.7}
+.fk a.on{background:var(--red);color:var(--onred)}
+
+/* hero */
+.hero{padding:92px 0 56px}
+.hmeta{display:flex;justify-content:space-between;gap:12px;font-size:.75rem;color:var(--mute)}
+.nm{position:relative;margin-top:30px}
+.ini{display:block;font:400 1.5rem/1 var(--disp);margin-bottom:6px}
+.name{font:400 clamp(3.2rem,20vw,12rem)/.84 var(--disp);letter-spacing:-.03em;text-transform:uppercase;text-shadow:.05em .05em 0 var(--pop)}
+.name span{display:block}
+.floppy{position:absolute;right:0;top:-6px;width:clamp(100px,30vw,230px);padding:0;border:0;background:none;cursor:pointer;transform:rotate(6deg);transition:transform .35s cubic-bezier(.3,1.5,.5,1)}
+.floppy:hover{transform:rotate(-2deg) translateY(-4px)}
+.floppy svg{display:block;width:100%;height:auto;filter:drop-shadow(5px 5px 0 var(--sh))}
+.tag1{max-width:30ch;margin:34px 0 18px;font:500 clamp(1.1rem,3.4vw,1.45rem)/1.45 var(--mono)}
+.now{margin:0 0 28px;font-size:.95rem;min-height:3.4em}
+.now b{background:var(--ink);color:var(--bg);padding:1px 7px;margin-right:6px;font-weight:500}
+.btns{display:flex;flex-wrap:wrap;gap:16px}
+.key{display:inline-block;font:700 .95rem/1 var(--mono);padding:15px 22px;border:2px solid var(--line);border-radius:6px;background:var(--amber);color:var(--onamb);text-decoration:none;cursor:pointer;box-shadow:0 5px 0 var(--line);transition:transform .12s,box-shadow .12s}
+.key.g{background:var(--panel);color:var(--ink)}
+.key:active{transform:translateY(5px);box-shadow:0 0 0 var(--line)}
+.haz{height:16px;background:repeating-linear-gradient(-45deg,var(--amber) 0 12px,var(--hz) 12px 24px);border-block:2px solid var(--line)}
+
+/* sections */
+.sec{padding:clamp(56px,10vw,104px) 0;scroll-margin-top:46px}
+h2{font:400 clamp(2.8rem,12vw,6.5rem)/.9 var(--disp);letter-spacing:-.03em;margin-bottom:.5em}
+.r{text-align:right}
+.win{background:var(--panel);border:2px solid var(--line);box-shadow:7px 7px 0 var(--sh);max-width:760px}
+.bar{display:flex;align-items:center;gap:10px;padding:5px 8px;border-bottom:2px solid var(--line);background:repeating-linear-gradient(var(--line) 0 2px,var(--panel) 2px 5px)}
+.bar b,.bar .box{background:var(--panel);font-size:.8rem;padding:0 10px;font-weight:700}
+.bar .box{width:14px;height:14px;padding:0;border:2px solid var(--line)}
+.wb{padding:22px 20px 6px}
+.wb p{margin:0 0 1.2em;max-width:62ch}
+.info{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;margin:0;padding:14px 20px 18px;border-top:2px dashed var(--line);font-size:.85rem}
+.info dt{color:var(--mute)}.info dd{margin:0}
+.skl{display:grid;gap:36px}
+.legend{margin:0;max-width:34ch;font-size:.9rem}
+.legend dt{font-weight:700;margin-top:14px}.legend dd{margin:2px 0 0;color:var(--mute)}
+.spec{list-style:none;margin:0;padding:0}
+.spec li{display:flex;align-items:baseline;gap:8px;padding:11px 0}
+.spec .d{flex:1;min-width:10px;border-bottom:2px dotted var(--line);transform:translateY(-4px)}
+.lv{font:700 .76rem/1 var(--mono);padding:5px 8px;border:2px solid var(--line);white-space:nowrap}
+.l1{background:var(--amber);color:var(--onamb)}.l3{border-style:dashed;color:var(--mute)}
+.trace{list-style:none;margin:0;padding:0 0 0 38px;position:relative;max-width:720px}
+.trace::before{content:"";position:absolute;left:9px;top:10px;bottom:20px;border-left:2px solid var(--line)}
+.trace li{position:relative;padding-bottom:40px}
+.trace li::before{content:"";position:absolute;left:-38px;top:6px;width:20px;height:20px;border:2px solid var(--line);background:var(--bg)}
+.trace li:first-child::before{background:var(--amber)}
+.trace li:last-child{padding-bottom:0}
+.trace li:last-child::before{border-style:dashed}
+.trace h3{font:400 1.9rem/1.1 var(--disp);letter-spacing:-.02em}
+.ver{font:500 .78rem var(--mono);color:var(--mute);margin-left:8px;letter-spacing:0}
+.trace ul{margin:10px 0 0;padding:0;list-style:none;max-width:56ch}
+.trace ul li{padding:0 0 8px 20px}
+.trace ul li::before{all:unset;position:absolute;left:0;content:"+"}
+.labs{display:flex;flex-wrap:wrap;gap:16px 12px;justify-content:flex-end}
+.lab{font:700 .85rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:10px 13px;border-radius:2px;background:var(--ink);color:var(--bg);box-shadow:3px 3px 0 var(--sh);transform:rotate(var(--r,0deg))}
+.lab.a{background:var(--amber);color:var(--onamb)}.lab.b{background:var(--red);color:var(--onred)}
+.print{--w:30px;position:relative;margin:44px 0 0 auto;max-width:700px;padding:22px calc(var(--w) + 16px);color:#2a2418;border:2px solid var(--line);box-shadow:7px 7px 0 var(--sh);background:repeating-linear-gradient(#f1ebd8 0 44px,#e6dcbc 44px 88px)}
+.print::before,.print::after{content:"";position:absolute;top:0;bottom:0;width:var(--w);background:radial-gradient(circle,var(--bg) 5px,transparent 5.5px) center 12px/var(--w) 28px repeat-y}
+.print::before{left:0;border-right:2px dashed #8a7d5a}.print::after{right:0;border-left:2px dashed #8a7d5a}
+.print p{margin:0 0 10px;font-size:.9rem;line-height:1.6;position:relative;padding-left:1.4em}
+.print p::before{content:"*";position:absolute;left:0}
+.term{max-width:700px;background:#0f0d08;color:#ffb627;border:2px solid var(--line);box-shadow:7px 7px 0 var(--sh);padding:20px 14px 20px}
+.term p{margin:0 10px 8px}.term .dim{color:#b58a2e;font-size:.9rem;margin-bottom:14px}
+.term a{display:flex;flex-wrap:wrap;gap:2px 18px;padding:13px 10px;text-decoration:none;border-top:1px dashed #6b4a08;word-break:break-all}
+.term a:hover,.term a:focus-visible{background:#ffb627;color:#0f0d08;outline-offset:-3px}
+.term b{min-width:9ch}
+footer{padding:0 0 40px;font-size:.8rem;color:var(--mute)}
+
+dialog{padding:0;border:2px solid var(--line);background:var(--panel);color:var(--ink);width:min(92vw,420px);box-shadow:8px 8px 0 var(--sh);animation:pop .25s cubic-bezier(.3,1.4,.5,1)}
+dialog::backdrop{background:rgba(8,6,4,.75)}
+@keyframes pop{from{transform:scale(.9)}}
+.dbody{padding:22px;text-align:center}
+.dbody h3{font:400 1.8rem/1.1 var(--disp);margin:14px 0 8px}
+.dbody p{margin:0 0 20px}
+#inv{width:132px;height:96px;shape-rendering:crispEdges;color:var(--red)}
+#inv g{animation:fr 1s steps(1) infinite}#inv .f2{animation-delay:-.5s}
+@keyframes fr{0%{opacity:1}50%{opacity:0}}
+
+@media(min-width:900px){
+.wrap{width:min(100% - 64px,1080px)}
+.hero{padding-top:120px}
+.skl{grid-template-columns:1fr 1.5fr;gap:64px;align-items:start}
+.legend{position:sticky;top:90px}
+.trace{margin-left:min(18%,190px)}
+.win{margin-left:6%}
+.rocker{font-size:.72rem}
+.fk a{font-size:.82rem}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+#boot{display:none}
+*{animation:none!important;transition:none!important}
+}
+</style>
+<noscript><style>#boot{display:none}</style></noscript>
+</head>
+<body>
+
+<!-- Opening: three words about my name. Edit the three <span>s to change them. -->
+<div id="boot" role="status" aria-label="Intro: Heard. Hopeful. Here.">
+  <div class="crt">
+    <p class="bt">G. Sam Yabesh: starting up</p>
+    <div class="bw"><span style="--i:0">Heard.</span><span style="--i:1">Hopeful.</span><span style="--i:2">Here.</span></div>
+  </div>
+  <button id="skip" type="button">Skip</button>
+</div>
+
+<header class="top">
+  <a class="brand" href="#top">sam.yabesh<span class="cur" aria-hidden="true"></span></a>
+  <!-- Signature move: the light/dark rocker switch. Light = beige plastic, dark = amber phosphor screen -->
+  <button class="rocker" id="sw" type="button" role="switch" aria-checked="false" aria-label="Switch between Plastic (light) and Phosphor (dark) themes">
+    <span class="l">Plastic</span><span class="rk"><i></i></span><span class="d">Phosphor</span>
+  </button>
+</header>
+
+<div id="screen">
+<main id="top">
+
+<section class="hero wrap">
+  <div class="hmeta"><span>Portfolio, revision 1</span><span>B.Tech IT, first year</span></div>
+  <div class="nm">
+    <span class="ini">G.</span>
+    <h1 class="name" aria-label="G. Sam Yabesh"><span>Sam</span><span>Yabesh</span></h1>
+    <button class="floppy" id="fl" type="button" aria-label="Monogram G S Y, drawn as a floppy disk">
+      <svg viewBox="0 0 200 200" aria-hidden="true">
+        <path d="M10 10H168L190 32V190H10Z" fill="#bf3a21" stroke="#1d1708" stroke-width="5" stroke-linejoin="round"/>
+        <rect x="52" y="10" width="92" height="54" fill="#cfcabb" stroke="#1d1708" stroke-width="5"/>
+        <rect x="114" y="18" width="20" height="38" fill="#bf3a21" stroke="#1d1708" stroke-width="4"/>
+        <rect x="28" y="96" width="144" height="86" fill="#f1ebd8" stroke="#1d1708" stroke-width="4"/>
+        <rect x="28" y="96" width="144" height="12" fill="#f0a20c" stroke="#1d1708" stroke-width="4"/>
+        <text x="100" y="153" text-anchor="middle" style="font-family:var(--disp)" font-size="46" fill="#1d1708">GSY</text>
+        <text x="100" y="174" text-anchor="middle" style="font-family:var(--mono)" font-size="9" font-weight="700" fill="#1d1708">G. SAM YABESH</text>
+        <rect x="14" y="172" width="10" height="12" fill="#1d1708"/>
+      </svg>
+    </button>
+  </div>
+  <!-- EDIT: tagline and "currently" line, in your own words -->
+  <p class="tag1">First-year IT student who likes finding out how things work, then building a version of my own.</p>
+  <p class="now"><b>currently…</b><span id="now">learning C, and making peace with compiler errors.</span><span class="cur" aria-hidden="true"></span></p>
+  <div class="btns"><a class="key" href="#about">Explore</a><a class="key g" href="#contact">Say hi</a></div>
+</section>
+<div class="haz" aria-hidden="true"></div>
+
+<!-- EDIT: replace this story with your real Me-Map answers -->
+<section class="sec wrap" id="about">
+  <h2>About</h2>
+  <div class="win">
+    <div class="bar"><span class="box"></span><b>about.txt</b></div>
+    <div class="wb">
+      <p>Hi, I'm Sam. My full name is G. Sam Yabesh, and I've just started my B.Tech in Information Technology.</p>
+      <p>I got into tech by wondering why a screen does what it does when you press a key. Old computers still fascinate me: chunky keyboards, beige boxes, whole worlds squeezed into a few kilobytes. That's why this site looks the way it does.</p>
+      <p>Right now I'm in the early, messy stage. I break things, read the error, and try again. I'm not an expert yet and I'm fine saying so. What I do have is patience for debugging and a real itch to understand what happens underneath.</p>
+      <p>I'd like to build things that are useful to real people, and keep my sense of humour while I do it.</p>
+    </div>
+    <dl class="info"><dt>name</dt><dd>G. Sam Yabesh</dd><dt>studying</dt><dd>B.Tech, Information Technology</dd><dt>year</dt><dd>First</dd><dt>status</dt><dd>Learning, out loud</dd></dl>
+  </div>
+</section>
+
+<section class="sec wrap" id="skills">
+  <h2 class="r">Skills</h2>
+  <div class="skl">
+    <dl class="legend">
+      <dt>Comfortable</dt><dd>I can build it without a tutorial open.</dd>
+      <dt>Learning</dt><dd>I can build it with the docs next to me.</dd>
+      <dt>Just starting</dt><dd>We've met. We're still being introduced.</dd>
+    </dl>
+    <ul class="spec">
+      <li>HTML and CSS<span class="d"></span><span class="lv l1">Comfortable</span></li>
+      <li>Asking good questions online<span class="d"></span><span class="lv l1">Comfortable</span></li>
+      <li>C programming<span class="d"></span><span class="lv">Learning</span></li>
+      <li>Python<span class="d"></span><span class="lv">Learning</span></li>
+      <li>JavaScript<span class="d"></span><span class="lv">Learning</span></li>
+      <li>Git and GitHub<span class="d"></span><span class="lv">Learning</span></li>
+      <li>Data structures<span class="d"></span><span class="lv l3">Just starting</span></li>
+      <li>Linux<span class="d"></span><span class="lv l3">Just starting</span></li>
+      <li>SQL<span class="d"></span><span class="lv l3">Just starting</span></li>
+      <li>How networks work<span class="d"></span><span class="lv l3">Just starting</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec wrap" id="journey">
+  <h2>Journey</h2>
+  <ol class="trace">
+    <li><h3>Made<span class="ver">v1.0</span></h3>
+      <ul><li>This portfolio: one HTML file, no frameworks, no images. Every shape is CSS or SVG.</li><li>A pile of small practice programs and pages from my first semester. The unglamorous kind that teach the most.</li></ul></li>
+    <li><h3>Learning<span class="ver">v1.1, now</span></h3>
+      <ul><li>C fundamentals, and why memory behaves the way it does.</li><li>JavaScript, so my pages can react instead of just sit there.</li><li>Git, so I stop saving files called final_final2.</li></ul></li>
+    <li><h3>Want to build<span class="ver">v2.0, someday</span></h3>
+      <ul><li>A small browser game with its own soundtrack.</li><li>A tool that fixes one boring problem for students at my college.</li><li>Something with real hardware that blinks, beeps or waters a plant.</li></ul></li>
+  </ol>
+</section>
+
+<!-- EDIT: swap in your real hobbies and fun facts -->
+<section class="sec wrap" id="beyond">
+  <h2 class="r">Beyond code</h2>
+  <div class="labs">
+    <span class="lab" style="--r:-2deg">Old gadgets</span>
+    <span class="lab a" style="--r:1.5deg">Music on repeat</span>
+    <span class="lab b" style="--r:-1deg">Long walks</span>
+    <span class="lab" style="--r:2deg">Games with good soundtracks</span>
+    <span class="lab a" style="--r:-1.5deg">Sketching circuits</span>
+  </div>
+  <div class="print">
+    <p>This site is one file. Every shape on it was drawn in code.</p>
+    <p>I trust a blinking cursor more than a loading spinner.</p>
+    <p>I'm in year one, so this page is a snapshot. Check back in a few months.</p>
+    <p>There's a secret disk hidden somewhere here. If you grew up with cheat codes, you already know how.</p>
+  </div>
+</section>
+
+<!-- EDIT: put your real email, LinkedIn and GitHub links here -->
+<section class="sec wrap" id="contact">
+  <h2>Contact</h2>
+  <div class="term">
+    <p>&gt; connect sam</p>
+    <p class="dim">Connection open. Tell me what you're working on.</p>
+    <a href="mailto:you@example.com"><b>email</b><span>you@example.com</span></a>
+    <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener"><b>linkedin</b><span>linkedin.com/in/your-handle</span></a>
+    <a href="https://github.com/your-handle" target="_blank" rel="noopener"><b>github</b><span>github.com/your-handle</span></a>
+    <p style="margin-top:14px">&gt;<span class="cur" aria-hidden="true"></span></p>
+  </div>
+</section>
+</main>
+<footer class="wrap">Built by hand in one file, with no images. <span id="yr"></span> G. Sam Yabesh.</footer>
+</div>
+
+<nav class="fk" aria-label="Sections">
+  <a href="#about"><b>F1</b>About</a><a href="#skills"><b>F2</b>Skills</a><a href="#journey"><b>F3</b>Journey</a><a href="#beyond"><b>F4</b>Beyond</a><a href="#contact"><b>F5</b>Contact</a>
+</nav>
+
+<!-- Easter egg: Konami code, or tap the floppy disk five times -->
+<dialog id="secret" aria-label="Secret disk">
+  <div class="bar"><span class="box"></span><b>disk2.exe</b></div>
+  <div class="dbody">
+    <svg id="inv" viewBox="0 0 11 8" fill="currentColor" role="img" aria-label="Pixel space invader"></svg>
+    <h3>You found disk 2.</h3>
+    <p>Most people never look this closely. Thanks for that. Say hi, so I know someone found it.</p>
+    <form method="dialog"><button class="key">Eject</button></form>
+  </div>
+</dialog>
+
+<script>
+const $=s=>document.querySelector(s),root=document.documentElement,
+reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+$('#yr').textContent='\u00a9 '+new Date().getFullYear();
+
+/* theme switch: the page collapses to a line like a CRT, swaps, and opens again */
+const sw=$('#sw');
+sw.setAttribute('aria-checked',root.dataset.theme==='dark');
+function paint(t){root.dataset.theme=t;sw.setAttribute('aria-checked',t==='dark');try{localStorage.setItem('gsy-theme',t)}catch(e){}}
+sw.onclick=()=>{
+  const t=root.dataset.theme==='dark'?'light':'dark',s=$('#screen');
+  if(reduce||!s.animate)return paint(t);
+  s.style.transformOrigin='50% '+(scrollY+innerHeight/2)+'px';
+  root.classList.add('swap');
+  const a=s.animate([{transform:'scale(1,1)'},{transform:'scale(1,.004)'}],{duration:230,easing:'cubic-bezier(.6,0,.9,.4)',fill:'forwards'});
+  a.onfinish=()=>{paint(t);const b=s.animate([{transform:'scale(1,.004)'},{transform:'scale(1,1)'}],{duration:330,easing:'cubic-bezier(.2,.8,.2,1)'});a.cancel();b.onfinish=()=>root.classList.remove('swap')};
+};
+
+/* opening + typed "currently" line */
+const boot=$('#boot'),now=$('#now'),msg=now.textContent;let typed=false;
+function typeNow(){if(typed||reduce)return;typed=true;let i=0;(function t(){now.textContent=msg.slice(0,++i);if(i<msg.length)setTimeout(t,36)})()}
+if(!reduce){now.textContent='';setTimeout(()=>{typeNow();boot.remove()},2400)}
+$('#skip').onclick=()=>{boot.remove();typeNow()};
+
+/* active section in the F-key bar */
+const links=[...document.querySelectorAll('.fk a')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(l=>l.classList.toggle('on',l.hash==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('.sec').forEach(s=>io.observe(s));
+
+/* easter egg */
+const rows1=['..#.....#..','...#...#...','..#######..','.##.###.##.','###########','#.#######.#','#.#.....#.#','...##.##...'],
+rows2=['..#.....#..','#..#...#..#','#.#######.#','###.###.###','###########','..#######..','..#.....#..','.#.......#.'];
+const px=r=>r.map((row,y)=>[...row].map((c,x)=>c==='#'?'<rect x="'+x+'" y="'+y+'" width="1" height="1"/>':'').join('')).join('');
+$('#inv').innerHTML='<g class="f1">'+px(rows1)+'</g><g class="f2">'+px(rows2)+'</g>';
+const dlg=$('#secret'),openEgg=()=>{if(!dlg.open)dlg.showModal()};
+const K=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];let k=0;
+addEventListener('keydown',e=>{const key=e.key.length===1?e.key.toLowerCase():e.key;k=key===K[k]?k+1:(key===K[0]?1:0);if(k===K.length){k=0;openEgg()}});
+let taps=[];$('#fl').onclick=()=>{const n=Date.now();taps=taps.filter(t=>n-t<3000);taps.push(n);if(taps.length>=5){taps=[];openEgg()}};
+</script>
+</body>
+</html>
